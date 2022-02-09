@@ -1,0 +1,163 @@
+.geralBox {
+	margin-left: 100px;
+}
+
+.conteiner {
+	min-height: 100%;
+	position: relative;
+	width: 800px;
+}
+
+.box {
+	width: 118px;
+	height: 50px;
+	margin-left: 100px;
+	margin-top: 80px;
+	display: inline-block;
+	background-color: #60B97C;
+	filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+	margin-bottom: 35px;
+	color: white;
+}
+
+.fachada {
+	width: 300px;
+	height: 140px;
+}
+
+p {
+	float: left;
+	padding: 1%;
+	text-align: center;
+	font-family: 'Agency FB', sans-serif;
+	font-size: 20px;
+}
+
+header {
+	background-color: #66BA80;
+	padding: 10px 15px;
+}
+
+header nav .navbar-nav .nav-link {
+	color: #efefef !important;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 0px 18px !important;
+}
+
+header .navbar-brand {
+	max-width: 200px;
+}
+
+/* Header Search Bar */
+.header-search input[type="text"] {
+	border: none;
+}
+
+.header-search .input-group-addon button {
+	color: #fff;
+	background: #226651;
+	padding: 10px 15px;
+	border: none;
+	font-size: 12px;
+}
+
+#logo_text {
+	color: #fff;
+}
+
+#icons {
+	font-size: 30px;
+}
+
+.select-style {
+	width: auto;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.select-style select {
+	width: 100%;
+	background: #efefef;
+	color: #000;
+	height: 38px;
+	padding: 0px 9px;
+	border: none;
+	outline: none;
+}
+
+.select-style select option.topshow {
+	padding: 10px 0;
+	position: relative;
+	top: 15px;
+}
+/* End Header Search Bar */
+
+/* Header cart CSS */
+header .cart a {
+	color: #fff;
+	text-decoration: none;
+}
+
+header .cart {
+	position: relative;
+	left: -15px;
+}
+
+header .cart a {
+	color: #fff;
+	text-decoration: none;
+}
+/* End Header cart CSS */
+
+/* Responsive CSS */
+@media ( max-width : 991px) {
+	header .cart a img {
+		width: 30px;
+		margin-left: 10px;
+	}
+	header .cart a span.number {
+		left: 40px;
+		top: -7px;
+		font-size: 14px;
+	}
+	header {
+		padding: 10px 0px;
+	}
+	.cart-login {
+		position: absolute;
+		right: 70px;
+	}
+	header .navbar-brand {
+		max-width: 150px;
+	}
+}
+
+#logo_nome {
+	color: #FFFFFF;
+}
+
+.form-central {
+	margin: 1em;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+#rodape {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.a {
+	text-decoration-color: white;
+	color: #000000;
+}
