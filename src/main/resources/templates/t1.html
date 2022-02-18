@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
 
@@ -15,14 +15,13 @@
 
 </head>
 <body>
-<header
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-6">
             <nav class="navbar navbar-expand-xl navbar-light">
                 <div class="container-fluid">
                     <a href="#" class="navbar-brand"><img
-                            src="/img/logo_farma.png" alt="logo" width="35px"/></a>
+                            src="/img/logo_farma.png" alt="logo" width="35px" /></a>
                     <h5 id="logo_nome">FourFarma</h5>
                     <button class="navbar-toggler" type="button"
                             data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -45,46 +44,49 @@
         </div>
     </div>
 </div>
-</header>
-<main class="flex-fill">
-    <div class="container">
-        <h4>Carrinho de Compras</h4>
-        <ul class="list-group mb-3">
-            <li class="list-group-item py-3" th:each="produto : ${produtos}">
-                <div class="row g-3">
-                    <div class="col-4 col-md-3 col-lg-2">
-                        <a href="#">
-                            <img class="imagem_produto" th:src="@{/home/img/{id_produto}(id_produto=${produto.id})}">
-                        </a>
+
+    <main class="flex-fill">
+        <div class="container">
+            <h1>Carrinho de Compras</h1>
+            <ul class="list-group mb-3">
+                <li class="list-group-item py-3" th:each="produto : ${produtos}">
+                    <div class="row g-3">
+                        <div class="col-4 col-md-3 col-lg-2">
+                            <a href="#">
+                                <img class="imagem_produto" th:src="@{/teste/img/{id_produto}(id_produto=${produto.id})}">
+                            </a>
+                        </div>
+                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                            <!--                        <h4>-->
+                            <!--                            <b><a href="#" class="text-decoration-none text-danger">-->
+                            <!--                                aaaaaaaaaaaaaaaaaaaaaaa</a></b>-->
+                            <!--                        </h4>-->
+                            <h5 th:text="${produto.descricao}">
+                            </h5>
+                        </div>
+                        <div class="text-end mt-2">
+                            <span class="text-dark" th:text="|R$ ${produto.preco}|"></span>
+                        </div>
                     </div>
-                    <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                        <!--                        <h4>-->
-                        <!--                            <b><a href="#" class="text-decoration-none text-danger">-->
-                        <!--                                aaaaaaaaaaaaaaaaaaaaaaa</a></b>-->
-                        <!--                        </h4>-->
-                        <h5 th:text="${produto.descricao}">
-                        </h5>
-                    </div>
-                    <div class="text-end mt-2">
-                        <span class="text-dark" th:text="|R$ ${produto.preco}|"></span>
-                    </div>
-                </div>
-    </div>
-    </li>
-    <li class="list-group-item py-3">
-        <div class="text-end">
-            <h4 class="text-dark mb-3">
-                Valor Total: R$ 63,84
-            </h4>
-            <a href="/Home" class="btn btn-outline-success btn-lg">
-                Continuar Comprando
-            </a>
-            <a href="/teste" class="btn btn-danger btn-lg ms-2 mt-xs-3">Fechar Compra</a>
         </div>
-    </li>
-    </ul>
-    </div>
+        </li>
+        <li class="list-group-item py-3">
+            <div class="text-end">
+                <h4 class="text-dark mb-3">
+                    Valor Total: R$ 63,84
+                </h4>
+                <a href="/Home" class="btn btn-outline-success btn-lg">
+                    Continuar Comprando
+                </a>
+                <a href="/teste" class="btn btn-danger btn-lg ms-2 mt-xs-3">Fechar Compra</a>
+            </div>
+        </li>
+        </ul>
+</div>
 </main>
+
+
+
 
 
 <footer class="text-center text-white"
@@ -128,8 +130,7 @@
 
     <!-- Copyright -->
     <div class="text-center text-white p-1"
-         style="background-color: #226651;">© 2020 Copyright: ForFarma
-    </div>
+         style="background-color: #226651;">© 2020 Copyright: ForFarma</div>
     <!-- Copyright -->
 </footer>
 </body>
