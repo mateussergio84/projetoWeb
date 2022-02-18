@@ -143,21 +143,20 @@ header .cart a {
 	margin: 1em;
 }
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-}
 
-#rodape {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-}
+
+
 
 .a {
 	text-decoration-color: white;
 	color: #000000;
+}
+
+.imagem_produto{
+    height: 180px;
+    width: 180px;
+    display: block;
+        margin-left: auto;
+        margin-right: auto
+
 }

@@ -1,35 +1,19 @@
 package br.com.projeto2.beans;
 
-import java.util.Calendar;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.*;
 
 @Entity
 @SequenceGenerator(allocationSize = 1, name = "pessoa", sequenceName = "sq_pessoa")
 public class Cliente {
 
-	public Cliente(String nome, String cpf, Endereco endereco, String senha, String email) {
-		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		Calendar c = Calendar.getInstance();
-		c.set(1998, 10, 15);
-		this.dataNascimento = c;
-		this.endereco = endereco;
-		this.senha = senha;
-		this.email = email;
-	}
+
 	
 	public Cliente() {}
 
@@ -37,11 +21,16 @@ public class Cliente {
 	@GeneratedValue(generator = "cliente", strategy = GenerationType.IDENTITY)
 	@Column(name = "id_cliente")
 	private Long id;
+
+	@OneToMany(mappedBy = "cliente")
+	private List<Produto> listCarinho = new ArrayList<Produto>();
+
+
 	private String nome;
 	private String cpf;
 
-	@Temporal(TemporalType.DATE)
-	private Calendar dataNascimento;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataNascimento;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "endereco_id")
@@ -49,7 +38,12 @@ public class Cliente {
 
 	private String senha;
 	private String email;
-	
+
+
+	public Long getId() {
+		return id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -66,11 +60,11 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public Calendar getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -97,8 +91,12 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
+	public List<Produto> getListCarinho() {
+		return listCarinho;
+	}
 
+	public void setListCarinho(List<Produto> listCarinho) {
+		this.listCarinho = listCarinho;
+	}
 }
